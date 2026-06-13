@@ -1,4 +1,4 @@
-/* Configuração da imagem lateral color: #1b357e;*/
+/*#1b357e;*/
 .side-image {
   background-image: url('/imagens/caminhonete.png'); 
   background-size: cover;
@@ -10,13 +10,14 @@
 .ford-logo {
   max-width: 140px;
 }
-.custom-btn {
+.btn {
   background-color: #005596; 
   border: none;
   font-weight: 500;
   font-size: 0.95rem;
+  color: #fff;
 }
-.custom-btn:hover {
+.btn:hover {
   background-color: #1b357e;
 }
 .form-control:focus {
