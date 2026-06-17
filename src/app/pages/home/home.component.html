@@ -1,1 +1,54 @@
-<p>home works!</p>
+<!-- O Bootstrap utiliza uma escala de 0 a 5 para definir tamanhos (onde 1 é o menor e 5 é o maior)
+ p- aplica padding 
+ mt- aplica margin-top 
+ mb- aplica margin-bottom 
+ mx- auto aplica margin-left e margin-right 
+ fw-bold deixa em negrito
+ fs-5 = <h5>-->
+
+<div class="fundo-pagina-inicial d-flex align-items-center justify-content-center position-relative">
+  
+  <div class="atalho-menu" (click)="abrirOuFecharMenu()" title="Abrir Menu" [class.escondido]="menuEstaAberto">
+    <img src="/imagens/cardapio.png" alt="Menu Principal">
+  </div>
+
+  <div class="menu-lateral shadow-lg" [class.aberto]="menuEstaAberto">
+    
+    <div class="cabecalho-menu p-4 d-flex justify-content-between align-items-center border-bottom">
+      <h4 class="mb-0 text-dark fw-bold">Menu</h4>
+      <span class="botao-fechar" (click)="abrirOuFecharMenu()">&times;</span> 
+    </div>
+
+    <ul class="nav flex-column p-3 mt-2">
+      <li class="nav-item mb-3">
+        <a class="nav-link text-dark fw-bold fs-5" routerLink="/home" (click)="abrirOuFecharMenu()">Início</a>
+      </li>
+      <li class="nav-item mb-3">
+        <a class="nav-link text-dark fw-bold fs-5" routerLink="/dashboard" (click)="abrirOuFecharMenu()">Dashboard</a>
+      </li>
+    </ul>
+  </div>
+ <!-- 
+  classes de botão no bootstrap
+  btn
+  btn-primary
+  btn-lg que aumenta o tamanho do botão 
+  -->
+  <div class="logout" (click)="sairDoSistema()" title="Sair do sistema">
+    <img src="/imagens/logout.png" alt="Sair do Sistema">
+  </div>
+
+  <div class="card p-5 text-center shadow">
+    <img src="/imagens/logo-ford-256.png" alt="Logo da Ford" class="mb-4 mx-auto" style="max-width: 150px;">
+    
+    <h2 class="mb-4 text-dark">Seja bem-vindo(a) ao portal FORD</h2>
+    <p class="text-muted mb-4">Escolha a opção abaixo para continuar</p>
+
+    <div class="d-grid gap-3">
+      <button class="btn-Dashboard" routerLink="/dashboard">
+        Acessar Dashboard
+      </button>
+    </div>
+  </div>
+
+</div>
