@@ -2,12 +2,13 @@
 .fundo-pagina-inicial {
   height: 100vh;
   width: 100%;
-  background-image: url('/imagens/caminhonete.png'); 
+  background-image: url('/imagens/caminhonete.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative; 
-  overflow: hidden; /* Evita que a página crie barra de rolagem lateral */
+  position: relative;
+  overflow: hidden;
+  /* Evita que a página crie barra de rolagem lateral */
 }
 
 /* Aviso central de bem vindo */
@@ -18,8 +19,9 @@
   border-radius: 15px;
   border: none;
 }
+
 .btn-Dashboard {
-  background-color: #005596; 
+  background-color: #005596;
   border: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -27,10 +29,13 @@
   padding: 12px 20px;
   border-radius: 6px;
 }
+
 .btn-Dashboard:hover {
-  background-color:  #1b357e; 
-  transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+  background-color: #1b357e;
+  transition: background-color 0.3s ease;
+  /* Transição suave para a mudança de cor */
 }
+
 .logout {
   position: absolute;
   top: 30px;
@@ -45,7 +50,7 @@
 }
 
 .logout:hover {
-  transform: scale(1.15); 
+  transform: scale(1.15);
 }
 
 /*menu hamburguer */
@@ -59,52 +64,64 @@
 }
 
 .atalho-menu img {
-  width: 45px; 
+  width: 45px;
   height: auto;
 }
 
 .atalho-menu:hover {
-  transform: scale(1.15); 
+  transform: scale(1.15);
 }
 
 .menu-lateral {
-  position: fixed; /* fixo para sobrepor toda a página */
-  left: -290px; /* escondido fora da tela */
-  width: 290px; /* largura da caixa */
-  height: 100vh; /* 100% da altura da tela */
+  position: fixed;
+  /* fixo para sobrepor toda a página */
+  left: -290px;
+  /* escondido fora da tela */
+  width: 290px;
+  /* largura da caixa */
+  height: 100vh;
+  /* 100% da altura da tela */
   background-color: #ffffffcc;
-  z-index: 1050; /* para ficar na frente de tudo */
-  transition: left 0.4s ease-in-out; /* A mágica da animação suave */
+  z-index: 1050;
+  /* para ficar na frente de tudo */
+  transition: left 0.4s ease-in-out;
+  /* A mágica da animação suave */
   display: flex;
   flex-direction: column;
 }
 
 .menu-lateral.aberto {
-  left: 0; 
+  left: 0;
 }
+
 /* O "X" para fechar o menu */
 .cabecalho-menu .botao-fechar {
   font-size: 2.5rem;
   cursor: pointer;
   color: #555;
   line-height: 1.5;
-  
+
 }
+
 .cabecalho-menu .botao-fechar:hover {
-  color: #1b357e; 
+  color: #1b357e;
 }
 
 .menu-lateral .nav-link {
   border-radius: 8px;
-  transition: background-color 0.2s, padding-left 0.3s; /* Prepara o efeito de empurrar o texto */
+  transition: background-color 0.2s, padding-left 0.3s;
+  /* Prepara o efeito de empurrar o texto */
 }
 
 .menu-lateral .nav-link:hover {
-  background-color: #1b357e; /* Cor de fundo ao passar o mouse */
-  color: #fff !important; /* Deixa o texto branco ao passar o mouse */
+  background-color: #1b357e;
+  /* Cor de fundo ao passar o mouse */
+  color: #fff !important;
+  /* Deixa o texto branco ao passar o mouse */
   padding-left: 25px;
 }
+
 .atalho-menu.escondido {
-  opacity: 0; 
-  pointer-events: none; 
+  opacity: 0;
+  pointer-events: none;
 }

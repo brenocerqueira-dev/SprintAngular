@@ -9,7 +9,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class HomeComponent {
   private roteador = inject(Router);
-  
+
   // Variável que o HTML usa para saber se mostra o menu ou não
   menuEstaAberto = false;
 
