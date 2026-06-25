@@ -134,19 +134,19 @@
 
 @media (max-width: 768px) {
   
-  /* A imagem do carro passa a respeitar o tamanho máximo da tela */
+  
   .imagem-carro-destaque {
     width: 100%;
-    max-width: 400px; /* Evita que fique gigante em tablets */
+    max-width: 400px; 
   }
 
-  /* O input ocupa toda a largura disponível na tabela */
+  
   .vin-input {
     width: 100%;
     min-width: 150px;
   }
 
-  /* Traz os botões mais para a borda, economizando espaço */
+  
   .atalho-menu {
     top: 15px;
     left: 15px;
@@ -157,7 +157,6 @@
     right: 15px;
   }
   
-  /* Diminui um pouco o título para caber entre os botões */
   .titulo-dashboard {
     font-size: 1.5rem;
     margin-top: 1rem;
