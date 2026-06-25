@@ -79,7 +79,7 @@ export class DashboardComponent implements OnInit {
   }
 
   sairDoSistema() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('UsuarioLogado');
     this.roteador.navigate(['/login']);
   }
 }

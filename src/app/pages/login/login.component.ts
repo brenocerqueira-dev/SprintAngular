@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
   usuario = '';
   senha = '';
   private router = inject(Router);
@@ -24,9 +23,11 @@ export class LoginComponent {
     };
     this.http.post('http://localhost:3001/login', dadosLogin).subscribe({
       next: (resposta: any) => {
+        localStorage.setItem('usuarioLogado', 'true');
         this.router.navigate(['/home']);
       },
       error: (erro: any) => {
+        localStorage.setItem('usuarioLogado', 'true');
         alert('Email ou senha incorretos. Por favor, tente novamente.');
         this.usuario = '';
         this.senha = '';

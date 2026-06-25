@@ -33,7 +33,7 @@
     <div class="row text-center mb-5 justify-content-center g-3">
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-start">Veículo</label>
+          <label class="text-muted small fw-bold mb-2 text-center">Veículo</label>
           <select class="form-select border-secondary" [(ngModel)]="veiculoSelecionado" (change)="aoMudarPeloSelect()">
             <option *ngFor="let carro of listaVeiculos" [ngValue]="carro">{{ carro.vehicle }}</option>
           </select>
@@ -42,22 +42,22 @@
 
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-start">Total de Vendas</label>
-          <h3 class="numero-destaque fw-bold mb-0 text-start">{{ veiculoSelecionado?.volumetotal }}</h3>
+          <label class="text-muted small fw-bold mb-2 text-center">Total de Vendas</label>
+          <h3 class="numero-destaque fw-bold mb-0 text-center">{{ veiculoSelecionado?.volumetotal }}</h3>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-start">Conectados</label>
-          <h3 class="numero-destaque fw-bold mb-0 text-start">{{ veiculoSelecionado?.connected }}</h3>
+          <label class="text-muted small fw-bold mb-2 text-center">Conectados</label>
+          <h3 class="numero-destaque fw-bold mb-0 text-center">{{ veiculoSelecionado?.connected }}</h3>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-start">Update Software</label>
-          <h3 class="numero-destaque fw-bold mb-0 text-start">{{ veiculoSelecionado?.softwareUpdates }}</h3>
+          <label class="text-muted small fw-bold mb-2 text-center">Update Software</label>
+          <h3 class="numero-destaque fw-bold mb-0 text-center">{{ veiculoSelecionado?.softwareUpdates }}</h3>
         </div>
       </div>
     </div>
@@ -66,32 +66,51 @@
       <img [src]="veiculoSelecionado?.img" [alt]="veiculoSelecionado?.vehicle" class="imagem-carro-destaque">
     </div>
 
-    <div class="table-responsive px-4">
-      <table class="table text-center align-middle tabela-ford">
-        <thead>
-          <tr>
-            <th>Código VIN</th>
-            <th>Odômetro</th>
-            <th>Combustível</th>
-            <th>Status</th>
-            <th>Lat.</th>
-            <th>Long.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <input type="text" class="form-control text-center vin-input" placeholder="Digite o VIN e aperte Enter"
-                [(ngModel)]="vinDigitado" (keyup.enter)="aoBuscarPeloVin()">
-            </td>
-            <td class="fw-bold">{{ dadosTelemetria ? dadosTelemetria.odometro + ' Km' : '--' }}</td>
-            <td class="fw-bold">{{ dadosTelemetria ? dadosTelemetria.nivelCombustivel + ' %' : '--' }}</td>
-            <td class="fw-bold">{{ dadosTelemetria?.status || '--' }}</td>
-            <td class="fw-bold">{{ dadosTelemetria?.lat || '--' }}</td>
-            <td class="fw-bold">{{ dadosTelemetria?.long || '--' }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="container-telemetria mt-2 px-2">
+      
+      <div class="row text-center d-none d-md-flex mb-3 border-bottom pb-2">
+        <div class="col-md-3 fw-bold">Código VIN</div>
+        <div class="col fw-bold">Odômetro</div>
+        <div class="col fw-bold">Combustível</div>
+        <div class="col fw-bold">Status</div>
+        <div class="col fw-bold">Lat.</div>
+        <div class="col fw-bold">Long.</div>
+      </div>
+
+      <div class="row text-center align-items-center d-flex flex-column flex-md-row g-4 g-md-2 pb-4">
+        
+        <div class="col-md-3 order-last order-md-first mt-5 mt-md-0">
+          <label class="d-md-none text-muted small fw-bold d-block mb-2">Pesquisar Novo VIN</label>
+          <input type="text" class="form-control text-center vin-input w-100" placeholder="Digite o VIN e aperte Enter" 
+                 [(ngModel)]="vinDigitado" (keyup.enter)="aoBuscarPeloVin()">
+        </div>
+
+        <div class="col">
+          <span class="d-md-none text-muted small fw-bold d-block mb-1">Odômetro</span>
+          <span class="fw-bold fs-5 fs-md-6">{{ dadosTelemetria ? dadosTelemetria.odometro + ' Km' : '--' }}</span>
+        </div>
+
+        <div class="col">
+          <span class="d-md-none text-muted small fw-bold d-block mb-1">Combustível</span>
+          <span class="fw-bold fs-5 fs-md-6">{{ dadosTelemetria ? dadosTelemetria.nivelCombustivel + ' %' : '--' }}</span>
+        </div>
+
+        <div class="col">
+          <span class="d-md-none text-muted small fw-bold d-block mb-1">Status</span>
+          <span class="fw-bold fs-5 fs-md-6">{{ dadosTelemetria?.status || '--' }}</span>
+        </div>
+
+        <div class="col">
+          <span class="d-md-none text-muted small fw-bold d-block mb-1">Lat.</span>
+          <span class="fw-bold fs-5 fs-md-6">{{ dadosTelemetria?.lat || '--' }}</span>
+        </div>
+
+        <div class="col">
+          <span class="d-md-none text-muted small fw-bold d-block mb-1">Long.</span>
+          <span class="fw-bold fs-5 fs-md-6">{{ dadosTelemetria?.long || '--' }}</span>
+        </div>
+        
+      </div>
     </div>
   </div>
 </div>
