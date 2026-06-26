@@ -42,13 +42,6 @@ export class DashboardComponent implements OnInit {
 
   // --- Funções da Telemetria ---
   aoMudarPeloSelect() {
-    this.dadosTelemetria = null;
-    if (this.veiculoSelecionado && this.veiculoSelecionado.vehicle) {
-      const vinOculto = this.vinsPorCarro[this.veiculoSelecionado.vehicle];
-      if (vinOculto) {
-        this.fazerRequisicaoTelemetria(vinOculto);
-      }
-    }
   }
 
   aoBuscarPeloVin() {
@@ -60,11 +53,7 @@ export class DashboardComponent implements OnInit {
     this.http.post<any>('http://localhost:3001/vehicleData', { vin: vinParaBuscar }).subscribe({
       next: (res) => {
         this.dadosTelemetria = res;
-        const carroCorrespondente = this.listaVeiculos.find(v => v.id === res.id);
-        if (carroCorrespondente) {
-          this.veiculoSelecionado = carroCorrespondente;
-          this.vinDigitado = '';
-        }
+        this.vinDigitado = '';
       },
       error: (erro) => {
         alert(erro.error.message || 'Código VIN utilizado não foi encontrado!');

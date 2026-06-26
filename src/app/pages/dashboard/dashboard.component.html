@@ -33,8 +33,8 @@
     <div class="row text-center mb-5 justify-content-center g-3">
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-center">Veículo</label>
-          <select class="form-select border-secondary" [(ngModel)]="veiculoSelecionado" (change)="aoMudarPeloSelect()">
+          <label class="text-muted small fw-bold mb-2 text-center d-block">Veículo</label>
+          <select class="form-select border-secondary text-center" [(ngModel)]="veiculoSelecionado" (change)="aoMudarPeloSelect()">
             <option *ngFor="let carro of listaVeiculos" [ngValue]="carro">{{ carro.vehicle }}</option>
           </select>
         </div>
@@ -42,21 +42,21 @@
 
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-center">Total de Vendas</label>
+          <label class="text-muted small fw-bold mb-2 text-center d-block">Total de Vendas</label>
           <h3 class="numero-destaque fw-bold mb-0 text-center">{{ veiculoSelecionado?.volumetotal }}</h3>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-center">Conectados</label>
+          <label class="text-muted small fw-bold mb-2 text-center d-block">Conectados</label>
           <h3 class="numero-destaque fw-bold mb-0 text-center">{{ veiculoSelecionado?.connected }}</h3>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card-metrica p-3 h-100 shadow-sm">
-          <label class="text-muted small fw-bold mb-2 text-center">Update Software</label>
+          <label class="text-muted small fw-bold mb-2 text-center d-block">Update Software</label>
           <h3 class="numero-destaque fw-bold mb-0 text-center">{{ veiculoSelecionado?.softwareUpdates }}</h3>
         </div>
       </div>
