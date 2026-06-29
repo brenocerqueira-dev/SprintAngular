@@ -63,7 +63,7 @@
     </div>
 
     <div class="text-center mb-5">
-      <img [src]="veiculoSelecionado?.img" [alt]="veiculoSelecionado?.vehicle" class="imagem-carro-destaque">
+     <img [src]="$any(veiculoSelecionado)?.img" [alt]="veiculoSelecionado?.vehicle" class="imagem-carro-destaque">
     </div>
 
     <div class="container-telemetria mt-2 px-2">

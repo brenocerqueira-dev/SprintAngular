@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { Veiculo, VeiculosAPI } from '../../models/veiculo.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,8 +16,8 @@ export class DashboardComponent implements OnInit {
   private http = inject(HttpClient);
   private roteador = inject(Router);
 
-  listaVeiculos: any[] = [];
-  veiculoSelecionado: any = null;
+  listaVeiculos: Veiculo[] = [];
+  veiculoSelecionado: Veiculo | null = null;
   dadosTelemetria: any = null;
   vinDigitado: string = '';
 
@@ -31,7 +32,7 @@ export class DashboardComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.http.get<any>('http://localhost:3001/vehicles').subscribe(res => {
+    this.http.get<VeiculosAPI>('http://localhost:3001/vehicles').subscribe(res => {
       this.listaVeiculos = res.vehicles;
       if (this.listaVeiculos.length > 0) {
         this.veiculoSelecionado = this.listaVeiculos[0];
@@ -68,7 +69,7 @@ export class DashboardComponent implements OnInit {
   }
 
   sairDoSistema() {
-    localStorage.removeItem('UsuarioLogado');
+    localStorage.removeItem('usuarioLogado');
     this.roteador.navigate(['/login']);
   }
 }

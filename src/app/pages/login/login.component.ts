@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Usuario } from '../../models/usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -21,19 +22,19 @@ export class LoginComponent {
       nome: this.usuario,
       senha: this.senha
     };
-    this.http.post('http://localhost:3001/login', dadosLogin).subscribe({
-      next: (resposta: any) => {
+
+    this.http.post<Usuario>('http://localhost:3001/login', dadosLogin).subscribe({
+      next: (resposta: Usuario) => {
+        // salva no localStorage e vai para a home
         localStorage.setItem('usuarioLogado', 'true');
         this.router.navigate(['/home']);
       },
-      error: (erro: any) => {
-        localStorage.setItem('usuarioLogado', 'true');
-        alert('Email ou senha incorretos. Por favor, tente novamente.');
+      error: (erro: HttpErrorResponse) => {
+        // erro: Mostra o alerta e limpa os campos (sem salvar no localStorage)
+        alert('Nome ou senha incorretos. Por favor, tente novamente.');
         this.usuario = '';
         this.senha = '';
       }
     });
-
-
   }
 }
