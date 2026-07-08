@@ -94,7 +94,7 @@ Durante o desenvolvimento foram aplicados diversos conceitos fundamentais do Ang
 ## 🔐 Tela de Login
 
 <p align="center">
-<img src="./public/imagens/readme/login.png" width="900">
+<img src="./public/imagens/login.png" width="900">
 </p>
 
 ---
@@ -102,7 +102,7 @@ Durante o desenvolvimento foram aplicados diversos conceitos fundamentais do Ang
 ## 🏠 Página Inicial
 
 <p align="center">
-<img src="./public/imagens/readme/home.png" width="900">
+<img src="./public/imagens/home.png" width="900">
 </p>
 
 ---
@@ -110,7 +110,7 @@ Durante o desenvolvimento foram aplicados diversos conceitos fundamentais do Ang
 ## 📊 Dashboard
 
 <p align="center">
-<img src="./public/imagens/readme/dashboard.png" width="900">
+<img src="./public/imagens/dashboard.png" width="900">
 </p>
 
 ---
