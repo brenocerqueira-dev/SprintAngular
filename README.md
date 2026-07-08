@@ -1,47 +1,121 @@
-# 🚗 SprintAngular - Portal do Proprietário Ford
+<div align="center">
 
-![Angular](https://img.shields.io/badge/Angular-19-DD0031?style=for-the-badge&logo=angular)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap)
-![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)
+# 🚗 Portal do Proprietário Ford
 
----
+### Sistema web desenvolvido em Angular para gerenciamento e consulta de informações dos veículos Ford.
 
-## 📖 Sobre o Projeto
+<p>
+  <img src="https://img.shields.io/badge/Angular-19-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge" alt="Status">
+</p>
 
-O **SprintAngular** é uma aplicação desenvolvida em Angular que simula um Portal do Proprietário Ford.
+<p>
+Projeto desenvolvido como desafio prático utilizando Angular, com foco em autenticação, proteção de rotas e construção de um dashboard responsivo.
+</p>
 
-O sistema permite que usuários autenticados realizem login e acessem um painel contendo informações relacionadas aos veículos da marca, utilizando uma interface moderna, responsiva e intuitiva.
-
-Este projeto foi desenvolvido com foco na prática dos principais conceitos do Angular, incluindo componentes, rotas, autenticação e organização em camadas.
-
----
-
-## ✨ Funcionalidades
-
-- 🔐 Login de usuários
-- 🛡️ Proteção de rotas (Auth Guard)
-- 🏠 Página inicial
-- 📊 Dashboard
-- 📂 Menu lateral responsivo
-- 🚪 Logout
-- 📱 Interface Responsiva
+</div>
 
 ---
 
-## 🖥️ Tecnologias Utilizadas
+# 📑 Índice
 
-- Angular 19
-- TypeScript
-- Bootstrap 5
-- HTML5
-- CSS3
-- Git
-- GitHub
+- [📖 Sobre o Projeto](#-sobre-o-projeto)
+- [✨ Funcionalidades](#-funcionalidades)
+- [🛠 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [📷 Demonstração](#-demonstração)
+- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
+- [🚀 Como Executar](#-como-executar)
+- [🧠 Conceitos Aplicados](#-conceitos-aplicados)
+- [👨‍💻 Desenvolvedor](#-desenvolvedor)
 
 ---
 
-## 📁 Estrutura do Projeto
+# 📖 Sobre o Projeto
+
+O **Portal do Proprietário Ford** é uma aplicação web desenvolvida em **Angular 19** que simula um portal de atendimento ao proprietário de veículos Ford.
+
+A aplicação permite que usuários autenticados acessem um ambiente exclusivo contendo um dashboard com indicadores, seleção de veículos e consulta de informações utilizando o código **VIN (Vehicle Identification Number)**.
+
+Durante o desenvolvimento foram aplicados diversos conceitos fundamentais do Angular, incluindo:
+
+- Componentização
+- Roteamento
+- Guards
+- Responsividade
+- Organização da arquitetura do projeto
+- Manipulação de dados utilizando TypeScript
+
+---
+
+# ✨ Funcionalidades
+
+✅ Login de usuários
+
+✅ Autenticação
+
+✅ Proteção de rotas com AuthGuard
+
+✅ Página inicial
+
+✅ Menu Hambúguer
+
+✅ Dashboard
+
+✅ Seleção do veículo
+
+✅ Consulta utilizando código VIN
+
+✅ Exibição de informações do veículo
+
+✅ Logout
+
+✅ Interface Responsiva
+
+---
+
+# 🛠 Tecnologias Utilizadas
+
+| Tecnologia | Utilização |
+|------------|------------|
+| Angular 19 | Framework Front-end |
+| TypeScript | Linguagem principal |
+| Bootstrap 5 | Estilização |
+| HTML5 | Estrutura |
+| CSS3 | Estilos |
+| Git | Controle de versão |
+| GitHub | Hospedagem do projeto |
+
+---
+
+# 📷 Demonstração
+
+## 🔐 Tela de Login
+
+<p align="center">
+<img src="./public/imagens/readme/login.png" width="900">
+</p>
+
+---
+
+## 🏠 Página Inicial
+
+<p align="center">
+<img src="./public/imagens/readme/home.png" width="900">
+</p>
+
+---
+
+## 📊 Dashboard
+
+<p align="center">
+<img src="./public/imagens/readme/dashboard.png" width="900">
+</p>
+
+---
+
+# 📂 Estrutura do Projeto
 
 ```text
 src
@@ -50,47 +124,50 @@ src
 │   ├── guards
 │   ├── models
 │   ├── pages
-│   │     ├── login
-│   │     ├── home
-│   │     └── dashboard
+│   │   ├── login
+│   │   ├── home
+│   │   └── dashboard
+│   │
+│   ├── services
+│   ├── app.config.ts
 │   ├── app.routes.ts
-│   └── app.config.ts
+│   └── app.component.ts
 │
-├── public
-│    └── imagens
+├── assets
 │
-└── assets
+└── public
+    └── imagens
 ```
 
 ---
 
-## 🚀 Como executar o projeto
+# 🚀 Como Executar
 
-Clone o repositório
+### Clone o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/SprintAngular.git
+git clone https://github.com/brenocerqueira-dev/SprintAngular.git
 ```
 
-Entre na pasta
+### Entre na pasta
 
 ```bash
 cd SprintAngular
 ```
 
-Instale as dependências
+### Instale as dependências
 
 ```bash
 npm install
 ```
 
-Execute o projeto
+### Execute a aplicação
 
 ```bash
 ng serve
 ```
 
-Acesse
+### Abra o navegador
 
 ```
 http://localhost:4200
@@ -98,48 +175,88 @@ http://localhost:4200
 
 ---
 
-## 🎯 Conceitos aplicados
+# 🧠 Conceitos Aplicados
 
-- Componentização
-- Property Binding
-- Event Binding
-- Two-Way Data Binding
-- Rotas
-- Auth Guard
-- Organização em Pages
-- Organização em Models
-- Responsividade
-- Bootstrap
+✔ Componentização
 
----
+✔ Angular Router
 
-## 📷 Demonstração
+✔ AuthGuard
 
-Adicione aqui prints da aplicação.
+✔ TypeScript
 
-### Login
+✔ Organização em Pages
 
-<img src="./prints/login.png">
+✔ Organização em Models
 
-### Home
+✔ Bootstrap
 
-<img src="./prints/home.png">
+✔ Layout Responsivo
 
-### Dashboard
+✔ Estrutura SPA (Single Page Application)
 
-<img src="./prints/dashboard.png">
+✔ Navegação protegida
 
 ---
 
-## 👨‍💻 Desenvolvedor
+# 📈 Fluxo da Aplicação
 
-**Breno Alexandre de Medeiros Cerqueira**
-
-GitHub:
-https://github.com/brenocerqueira-dev
+```text
+Login
+   │
+   ▼
+Autenticação
+   │
+   ▼
+Página Inicial
+   │
+   ▼
+Dashboard
+   │
+   ├── Selecionar veículo
+   ├── Consultar VIN
+   ├── Visualizar informações
+   └── Logout
+```
 
 ---
 
-## 📄 Licença
+# 💡 Aprendizados
 
-Projeto desenvolvido para fins acadêmicos.
+Durante este projeto foi possível desenvolver conhecimentos sobre:
+
+- Desenvolvimento de aplicações SPA utilizando Angular
+- Organização de componentes reutilizáveis
+- Controle de navegação entre páginas
+- Proteção de rotas utilizando Guards
+- Criação de interfaces modernas e responsivas
+- Manipulação de dados utilizando TypeScript
+- Versionamento de código com Git e GitHub
+
+---
+
+# 👨‍💻 Desenvolvedor
+
+<div align="center">
+
+### Breno Alexandre de Medeiros Cerqueira
+
+Desenvolvedor Front-end em formação.
+
+<p>
+
+<a href="https://github.com/brenocerqueira-dev">
+<img src="https://img.shields.io/badge/GitHub-brenocerqueira--dev-181717?style=for-the-badge&logo=github">
+</a>
+
+</p>
+
+</div>
+
+---
+
+<div align="center">
+
+### ⭐ Se este projeto foi interessante para você, deixe uma estrela no repositório!
+
+</div>
